@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Page_Navigation_App</RootNamespace>
+    <Nullable>disable</Nullable>
+    <UseWPF>true</UseWPF>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\1.png" />
+    <None Remove="Images\2.png" />
+    <None Remove="Images\3.png" />
+    <None Remove="Images\4.png" />
+    <None Remove="Images\featured_illustration_person-laptop.png" />
+    <None Remove="Images\Fellow.png" />
+    <None Remove="Images\icons8-add-male-user-64 %281%29.png" />
+    <None Remove="Images\icons8-edit-row-50 %281%29.png" />
+    <None Remove="Images\icons8-student-64.png" />
+    <None Remove="Images\icons8-trash-24.png" />
+    <None Remove="Images\img_home.png" />
+    <None Remove="Images\plan-track-meeting.png" />
+    <None Remove="Images\shutdown_def.png" />
+    <None Remove="Images\shutdown_mo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\1.png" />
+    <Resource Include="Images\2.png" />
+    <Resource Include="Images\3.png" />
+    <Resource Include="Images\4.png" />
+    <Resource Include="Images\featured_illustration_person-laptop.png" />
+    <Resource Include="Images\Fellow.png" />
+    <Resource Include="Images\icons8-add-male-user-64 (1).png" />
+    <Resource Include="Images\icons8-edit-row-50 (1).png" />
+    <Resource Include="Images\icons8-student-64.png" />
+    <Resource Include="Images\icons8-trash-24.png" />
+    <Resource Include="Images\plan-track-meeting.png" />
+    <Content Include="Images\img_home.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\shutdown_def.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\shutdown_mo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.1.0" />
+  </ItemGroup>
+
+</Project>

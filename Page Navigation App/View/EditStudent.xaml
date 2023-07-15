@@ -1,0 +1,92 @@
+﻿<Window x:Class="Page_Navigation_App.View.EditStudent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Page_Navigation_App.View"
+        xmlns:vm="clr-namespace:Page_Navigation_App.ViewModel"
+        mc:Ignorable="d"
+
+        
+        Title="EditStudent"  Height="600"
+        Width="850"
+       AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+      Background="Transparent"
+         WindowStyle="None">    
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionary1.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+   
+
+    <Grid>
+
+        <Border   Background="#212529" CornerRadius="20" />
+
+        <StackPanel Grid.Column="1">
+
+                <Grid>
+
+
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="450"/>
+
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="1">
+
+                        <TextBlock Text="First Name:" Margin="30 10" Foreground="#2ED8EF"/>
+                        <TextBox Background="#19243C" Width="800" BorderBrush="#2ED8EF" Foreground="White" Text="{Binding Firstname, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Column="1"/>
+                        <TextBlock Text="Last Name:" Margin="30 10" Grid.Row="1" Foreground="#2ED8EF"/>
+                        <TextBox Background="#19243C" Width="800" BorderBrush="#2ED8EF" Foreground="White" Text="{Binding Lastname, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Column="1"/>
+                        <TextBlock Text="Age:" Margin="30 10" Grid.Row="1" Foreground="#2ED8EF"/>
+                        <TextBox Background="#19243C" Width="800" BorderBrush="#2ED8EF" Foreground="White" Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock Text="DateOfBirth:" Margin="30 10" Grid.Row="1" Foreground="#2ED8EF"/>
+                        <TextBox Background="#19243C" Width="800" BorderBrush="#2ED8EF" Foreground="White" Text="{Binding Dateofbirth, UpdateSourceTrigger=PropertyChanged}" Margin="5" Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock Text="GPA" Margin="30 10" Grid.Row="1" Foreground="#2ED8EF"/>
+                    <TextBox Background="#19243C" Width="800" BorderBrush="#2ED8EF" Foreground="White" Text="{Binding Gpa, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:N1}}" Margin="5" Grid.Row="1" Grid.Column="1"/>
+                        <Button Content="insert picture" Height="30" Background="#19243C"  Foreground="#2ED8EF" Width="100" HorizontalAlignment="Left" Command="{Binding UploadPhotoCommand}" BorderBrush="Transparent" Margin="30,15,5,-30" Grid.Row="3" VerticalAlignment="Bottom" Grid.ColumnSpan="2">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="#2ED8EF" BorderThickness="{TemplateBinding BorderThickness}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <Image Height="40" HorizontalAlignment="Left" Width="100" VerticalAlignment="Top" Margin="140 -7 0 0" Source="{Binding SelectedImage,UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <Button Content="Save" Width="300" BorderBrush="Transparent" Height="30" Background="#19243C" Foreground="#2ED8EF" Command="{Binding SaveCommand}" Margin="0 10" Grid.Row="3" VerticalAlignment="Bottom" Grid.ColumnSpan="2" >
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="#2ED8EF" BorderThickness="{TemplateBinding BorderThickness}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+
+                    </StackPanel>
+
+                </Grid>
+            </StackPanel>
+
+
+            <Button x:Name="CloseApp"
+                Style="{StaticResource ExitApp}"
+                Click="CloseApp_Click" />
+
+
+
+
+        </Grid>
+ 
+</Window>
